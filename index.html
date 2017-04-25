@@ -1,0 +1,77 @@
+<!-- Copyright © CommonTime Ltd. 2016 -->
+<!DOCTYPE html>
+<html>
+<head lang="en" themes="">
+    <meta charset="UTF-8">
+    <title>CommonTime Infinity Client</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+
+    <!-- Cordova -->
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+
+    <!-- ASSETS -->
+    <script src="assets.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            FastClick.attach(document.body);
+        }, false);
+    </script>
+
+    <style>
+        #splash-screen {
+            position: fixed;
+            background: linear-gradient(45deg, #15233b 43%,#0a4069 100%);
+            height: 100%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #splash-screen img {
+            width: 66.6%;
+            min-width: 100px;
+            max-width: 250px;
+        }
+
+        .view-frame {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="splash-screen" class="text-center" style="background: #13d232;">
+        <img src="data:image/png;base64,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" alt="" style="width: auto; min-width: 0; max-width: none;">
+    </div>
+    <!-- Modal -->
+    <div class="modal" id="version-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Update available</h4>
+                </div>
+                <div class="modal-body">
+                    Do you wish to update to version <span class="version-number">(no version specified)</span> now?<br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="dismiss-button btn btn-default">Later</button>
+                    <button type="button" class="confirm-button btn btn-primary">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="view-frame" ng-class="{back: ($root.back)}"></div>
+
+    <!-- MODULES -->
+    <script src="app.min.js"></script>
+
+
+
+</body></html>
